@@ -1,0 +1,19 @@
+@import './colors.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-family;
+  background: #F5F6F8;
+  color: $black
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

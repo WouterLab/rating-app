@@ -4,21 +4,31 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.29.1",
     "next": "12.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.54.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.3.1",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/parser": "^5.30.7",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
-    "typescript": "4.7.4"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "typescript": "^4.7.4"
   }
 }

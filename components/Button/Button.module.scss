@@ -1,0 +1,48 @@
+@import "../../styles/colors.scss";
+
+.button {
+  display: inline-flex;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.primary {
+  color: $white;
+  background-color: $primary;
+  border: 1px solid $white;
+}
+
+.primary:hover {
+  background-color: $primary-hover;
+}
+
+.ghost {
+  color: $black;
+  background: none;
+  border: 1px solid $grey-light;
+}
+
+.ghost:hover {
+  color: $white;
+  background-color: $black;
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.down {
+    transform: rotate(90deg);
+    transition: all 1s;
+}
+
+.primary svg, .ghost:hover svg {
+    fill: $white;
+}
