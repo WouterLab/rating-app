@@ -38,9 +38,6 @@ function Home({ menu }: HomeProps): JSX.Element {
         Meow
       </AdditionTag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-        {menu.map(el => (<li key={el._id.secondCategory}>{el._id.secondCategory}</li>))}
-      </ul>
     </>
   );
 }
