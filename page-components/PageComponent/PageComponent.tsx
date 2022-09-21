@@ -4,16 +4,33 @@ import {
   HeadingTag,
   HhData,
   ParagraphTag,
+  Product,
+  Sort,
 } from '../../components';
 import { PageComponentProps } from './PageComponent.props';
 import styles from './PageComponent.module.scss';
 import { TopLevelCategory } from '../../interfaces/page.interface';
+import { SortEnum } from '../../components/Sort/Sort.props';
+import { useReducer } from 'react';
+import { sortReducer } from './sort.reducer';
 
 export const PageComponent = ({
   page,
   products,
   firstCategory,
 }: PageComponentProps): JSX.Element => {
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(
+    sortReducer,
+    {
+      products,
+      sort: SortEnum.Rating,
+    }
+  );
+
+  const setSort = (sort: SortEnum) => {
+    dispatchSort({ type: sort });
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -23,10 +40,10 @@ export const PageComponent = ({
             {products.length}
           </AdditionTag>
         )}
-        <span>Сортировка</span>
+        <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {products && products.map((p) => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts && sortedProducts.map((p) => <Product product={p} key={p._id} />)}
       </div>
       <div className={styles.hhTitle}>
         <HeadingTag tag='h2'>Вакансии - {page.category}</HeadingTag>
