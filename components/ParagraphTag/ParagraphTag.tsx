@@ -7,7 +7,7 @@ export const ParagraphTag = ({
   children,
   className,
   ...props
-}: ParagraphTagProps) => {
+}: ParagraphTagProps): JSX.Element => {
   return (
     <p
       className={cn(styles.p, className, {

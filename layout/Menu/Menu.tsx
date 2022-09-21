@@ -12,12 +12,15 @@ export const Menu = (): JSX.Element => {
   const router = useRouter();
 
   const openSecondLevel = (secondCategory: string) => {
-    setMenu && setMenu(menu.map(m => {
-      if (m._id.secondCategory == secondCategory) {
-        m.isOpened = !m.isOpened;
-      }
-      return m;
-    }));
+    setMenu &&
+      setMenu(
+        menu.map((m) => {
+          if (m._id.secondCategory == secondCategory) {
+            m.isOpened = !m.isOpened;
+          }
+          return m;
+        })
+      );
   };
 
   const buildFirstLevel = () => {
@@ -54,7 +57,12 @@ export const Menu = (): JSX.Element => {
           }
           return (
             <div key={m._id.secondCategory}>
-              <div className={styles.secondLevel} onClick={() => openSecondLevel(m._id.secondCategory)}>{m._id.secondCategory}</div>
+              <div
+                className={styles.secondLevel}
+                onClick={() => openSecondLevel(m._id.secondCategory)}
+              >
+                {m._id.secondCategory}
+              </div>
               <div
                 className={cn(styles.secondLevelBlock, {
                   [styles.secondLevelBlockOpened]: m.isOpened,
@@ -72,8 +80,6 @@ export const Menu = (): JSX.Element => {
     return pages.map((p) => (
       <Link href={`/${route}/${p.alias}`}>
         <a
-          key={Date.now()}
-          href={`/${route}/${p.alias}`}
           className={cn(styles.thirdLevel, {
             [styles.thirdLevelActive]: `/${route}/${p.alias}` == router.asPath,
           })}

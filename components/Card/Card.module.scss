@@ -1,0 +1,11 @@
+@import '../../styles/colors.scss';
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  background: $white;
+}
+
+.blue {
+  background: #F9F8FF;
+}
