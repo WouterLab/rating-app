@@ -16,3 +16,18 @@
 .input::placeholder {
   color: $gray
 }
+
+.error {
+  border: 1px solid $red
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  color: $red;
+}
+
+.inputWrapper {
+  position: relative;
+}

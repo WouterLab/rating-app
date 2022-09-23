@@ -3,7 +3,6 @@ import {
   Advantages,
   HeadingTag,
   HhData,
-  ParagraphTag,
   Product,
   Sort,
 } from '../../components';

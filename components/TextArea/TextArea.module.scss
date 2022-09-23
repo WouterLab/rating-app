@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 
-.input {
+.textarea {
+  width: 100%;
   padding: 7px 15px;
   color: $black;
   border: none;
@@ -13,6 +14,21 @@
   line-height: 22px;
 }
 
-.input::placeholder {
-  color: $gray
+.textarea::placeholder {
+  color: $gray;
+}
+
+.error {
+  border: 1px solid $red;
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  color: $red;
+}
+
+.textareaWrapper {
+  position: relative;
 }

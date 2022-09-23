@@ -18,9 +18,9 @@ export interface ProductModel {
   tags: string[];
   title: string;
   link: string;
-  price: string;
+  price: number;
   credit: string;
-  oldPrice: string;
+  oldPrice: number;
   description: string;
   characteristics: ProductCharacteristic[];
   createdAt: Date;
