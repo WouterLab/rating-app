@@ -57,7 +57,7 @@ export const ReviewForm = ({ productId, isOpened, className, ...props }: ReviewF
 						control={control}
 						name='rating'
 						rules={{ required: { value: true, message: 'Укажите рейтинг' } }}
-						render={({ field }) => (
+						render={({ field }): JSX.Element => (
 							<Rating
 								isEditable
 								rating={field.value}

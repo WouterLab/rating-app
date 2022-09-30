@@ -5,13 +5,13 @@ import {
   HhData,
   Product,
   Sort,
-} from '../../components';
-import { PageComponentProps } from './PageComponent.props';
-import styles from './PageComponent.module.scss';
-import { TopLevelCategory } from '../../interfaces/page.interface';
-import { SortEnum } from '../../components/Sort/Sort.props';
-import { useReducer } from 'react';
-import { sortReducer } from './sort.reducer';
+} from "../../components";
+import { PageComponentProps } from "./PageComponent.props";
+import styles from "./PageComponent.module.scss";
+import { TopLevelCategory } from "../../interfaces/page.interface";
+import { SortEnum } from "../../components/Sort/Sort.props";
+import { useEffect, useReducer } from "react";
+import { sortReducer } from "./sort.reducer";
 
 export const PageComponent = ({
   page,
@@ -23,12 +23,16 @@ export const PageComponent = ({
     {
       products,
       sort: SortEnum.Rating,
-    }
+    },
   );
 
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort });
   };
+
+  useEffect(() => {
+    dispatchSort({ type: "reset", initialState: products });
+  }, [products]);
 
   return (
     <div className={styles.wrapper}>
@@ -42,7 +46,8 @@ export const PageComponent = ({
         <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {sortedProducts && sortedProducts.map((p) => <Product product={p} key={p._id} />)}
+        {sortedProducts &&
+          sortedProducts.map((p) => <Product product={p} key={p._id} />)}
       </div>
       <div className={styles.hhTitle}>
         <HeadingTag tag='h2'>Вакансии - {page.category}</HeadingTag>
